@@ -1,7 +1,7 @@
 ## Koth 3.0.0-ALPHA
 
 A customizable plugin + Mini-Game, made for Faction servers, which offers: Many configurable options, and some that have never been seen before.
-![koth](media/koth.gif)
+![koth](media/koth.png)
 ## Features / Changes for KOTH-3.0.0-ALPHA / Todo list
 
 - [x] Change how player classes generate.
