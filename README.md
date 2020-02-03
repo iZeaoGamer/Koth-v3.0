@@ -4,23 +4,23 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 ## Features / Changes for KOTH-3.0.0-ALPHA / Todo list
 
-- Change how player classes generate. [x]
+- Change how player classes generate. [ x ]
 
-- A lot of configurable features you can play around with. [x]
+- A lot of configurable features you can play around with. [ x ]
 
 - Multi-Arena support [ ]
 
-- 3.00 brings in so many bug fixes, and new features added. [x]
+- 3.00 brings in so many bug fixes, and new features added. [ x ]
 
-- You can leave koth arenas! By typing /koth leave [x]
+- You can leave koth arenas! By typing /koth leave [ x ]
 
 - Fixed teleportation bugs when using /koth join (An issue on 2.0.0) [x]
 
-- Renamed /koth p1 to /koth pos1 [x]
+- Renamed /koth p1 to /koth pos1 [ x ]
 
-- Renamed /koth p2 to /koth pos2 [x]
+- Renamed /koth p2 to /koth pos2 [ x ]
 
-- Added Player help commands! Type /koth or /koth help to display those! (Will also include new administrative commands if the sender is opped. [x]
+- Added Player help commands! Type /koth or /koth help to display those! (Will also include new administrative commands if the sender is opped. [ x ]
 
 - Game timer is now editable in-game! Type /koth setgametime <game-time-in-seconds> [x]
 
@@ -32,7 +32,7 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 - Configurable rewards [ ]
 
-- Add FactionsPro Support [x]
+- Add FactionsPro Support [X]
 
 - Add Discord Support [x]
 
