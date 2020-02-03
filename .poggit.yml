@@ -3,6 +3,6 @@ build-by-default: true
 branches:
 - master
 projects:
-  Koth:
+  Koth-v3.0:
     path: ""
 ...
