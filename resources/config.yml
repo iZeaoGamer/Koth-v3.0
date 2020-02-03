@@ -1,0 +1,69 @@
+---
+capture_time: 100
+# Capture Time in seconds.
+
+game_time: 10
+# How long a koth game lasts for in minutes.
+
+reset_capture_progress: true
+# Decide whether or not the capture progress resets whenever a player is out of the capture area zone.
+
+prefix: '[KOTH] '
+# Prefix for Koth commands. (Revamping this.)
+
+starting: Game starting in {sec}. Join Game now! (/koth join)
+# Starting koth message. (Revamping this.)
+
+begin: KOTH Started! (/koth join)
+# Koth started message. (Revamping this)
+joined: Joined game successfully!, Be the first to capture the area now!
+# Join koth game message. (Revamping this).
+
+win: '{faction} | {player} has captured the area and won the event!'
+# Koth win message (Revamping this).
+
+end: Event has ended!
+# Koth end message (Revamping this.)
+
+not_running: There is no KOTH event running at the moment!
+# Koth not running message.
+
+still_running_title: KOTH Running!
+# Koth running message.
+ 
+still_running_sub: Join now with /koth join !
+# Koth running subtitle message.
+
+progress: Capturing... {percent}%
+# Koth progress / capture perentage message. (Revamping this).
+
+end_game: Game Ended!
+# Koth end game message. (Revamping this).
+
+game_bar: 'KOTH Time Left: {time}'
+# Koth Time Left Message (Revamping this).
+
+rewards:
+- givemoney {player} 1000
+- give {player} diamond 2
+# Rewards giving if a player wins the koth game. - Re-coding rewards to add more compatibilty soon).
+
+player-creation: false
+# Enable this to allow built-in KothPlayer support. If this option is set to false, then you're allowing other plugins to generate KothPlayer. This does depend on what plugins you're using to generate player data.
+# Note that other plugins will need to extend the class KothPlayer from their original Player::class in the plugin.
+
+## Discord settings
+discord-support: true
+# If enabled, you're willing to allow automatic support with any discord API Web-hooks virions.
+# At the moment, we only support CortexPE's WebHook virion, which is automatically installed if you use a .phar file for this plugin.
+
+webhook-url: https://discordapp.com/api/webhooks/624242971944026124/RUt3NvnHIzF-LEjgATkL_KKCycvHdrSfA8unCAJzWe6atEg4b84zOfBAIk-3vj8ihQAS
+# This is the URL of the discord webhook you'd like to use. Please seek advice for discord webhooks if you need any help.
+
+bot-displayname: Koth Event
+# Discord webhook displayname - The name that shows as a user on discord.
+
+event_time: 1000000
+# Event time, in seconds. Note - Don't put event time on very low. Example - If you've put your game time on 50 minutes, don't put the event time lower than the game time. This will cause issues in the future of using this plugin.
+
+...
