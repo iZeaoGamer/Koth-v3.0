@@ -4,51 +4,51 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 ## Features / Changes for KOTH-3.0.0-ALPHA / Todo list
 
-- Change how player classes generate. [ x ]
+- [x] Change how player classes generate.
 
-- A lot of configurable features you can play around with. [ x ]
+- [x] A lot of configurable features you can play around with.
 
-- Multi-Arena support [ ]
+- [ ] Multi-Arena support
 
-- 3.00 brings in so many bug fixes, and new features added. [ x ]
+- [x] 3.0.0 brings in so many bug fixes, and new features added.
 
-- You can leave koth arenas! By typing /koth leave [ x ]
+- [x] You can leave koth arenas! By typing /koth leave
 
-- Fixed teleportation bugs when using /koth join (An issue on 2.0.0) [x]
+- [x] Fixed teleportation bugs when using /koth join (An issue on 2.0.0)
 
-- Renamed /koth p1 to /koth pos1 [ x ]
+- [x] Renamed /koth p1 to /koth pos1
 
-- Renamed /koth p2 to /koth pos2 [ x ]
+- [x] Renamed /koth p2 to /koth pos2
 
-- Added Player help commands! Type /koth or /koth help to display those! (Will also include new administrative commands if the sender is opped. [ x ]
+- [x] Added Player help commands! Type /koth or /koth help to display those! (Will also include new administrative commands if the sender is opped.
 
-- Game timer is now editable in-game! Type /koth setgametime <game-time-in-seconds> [x]
+- [x] Game timer is now editable in-game! Type /koth setgametime <game-time-in-seconds>
 
-- Added event timer - Will now automatically broadcast whenever a koth event is about to start. [x]
+- [x] Added event timer - Will now automatically broadcast whenever a koth event is about to start.
 
-- Event Timer is now editable in-game! Type /koth seteventtime <game-in-seconds> [x]
+- [x] Event Timer is now editable in-game! Type /koth seteventtime <game-in-seconds> 
 
-- Event timers + Game-timers can now be translated to seconds/ticks. You can type /koth seteventtime <game-in-seconds>, and it will tell you right away how many seconds that is in minutes. [x]
+- [x] Event timers + Game-timers can now be translated to seconds/ticks. You can type /koth seteventtime <game-in-seconds>, and it will tell you right away how many seconds that is in minutes. 
 
-- Configurable rewards [ ]
+- [ ] Configurable rewards
 
-- Add FactionsPro Support [X]
+- [x] Add FactionsPro Support
 
-- Add Discord Support [x]
+- [x] Add Discord Support
 
-- Best customizable koth plugin ever to be made, free [ ]
+- [ ] Best customizable koth plugin ever to be made, free
 
-- Fixed koth teleportation from not teleporting them to exactly the correct world. [x]
+- [x] Fixed koth teleportation from not teleporting them to exactly the correct world.
 
-- Fixed /koth setgametime from not updating properly. [x]
+- [x] Fixed /koth setgametime from not updating properly.
 
-- Fixed /koth seteventtime from not updating. [x]
+- [x] Fixed /koth seteventtime from not updating.
 
-- Add discord virion intergration [x]
+- [x] Add discord virion intergration
 
-- Add WorldLoader-All support to allow worlds to load before the plugin does. [x]
+- [x] Add WorldLoader-All support to allow worlds to load before the plugin does.
 
-- Add KothPlayer class, where it'll store all of the player data. At the moment, it only supports isInGame(), and setInGame(bool). We may add more to this in the future. [x]
+- [x] Add KothPlayer class, where it'll store all of the player data. At the moment, it only supports isInGame(), and setInGame(bool). We may add more to this in the future.
 
 - + And so much more! Just look for yourself, it's more awesome than ever!
 
