@@ -55,7 +55,7 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 ## Intergrations
 # We support the following intergrations:
-- WebHookAPI - This will allow discord support for this plugin. Author: CortexPE - You can download this plugin here: https://poggit.pmmp.io/ci/CortexPE/DiscordWebhookAPI/DiscordWebhookAPI
+- WebHookAPI - This will allow discord support for this plugin. Author: CortexPE - This plugin doesn't require a download. It's already added to the plugin itself.
 - WorldLoader-All - This will allow multi-world support - Inbetween changing from normal world to koth world. Since this plugin doesn't currently support this built-in, you can install our fork version of the plugin which will work with most plugins that support multi-world, such as Koth.
 Author: Nid
 You can download this plugin using this link here: https://github.com/iZeaoGamer/WorldLoader-PluginsSupport
