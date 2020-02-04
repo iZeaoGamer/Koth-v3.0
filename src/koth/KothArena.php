@@ -37,7 +37,7 @@ class KothArena
 
     public $players = [];
 
-    private $spawns = [];
+    public $spawns = [];
 
     private $p1;
 
