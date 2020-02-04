@@ -48,7 +48,9 @@ class KothListener implements Listener
 
     {
 
+	   
         $this->plugin = $main;
+	    $this->arena = $main->arena;
 
     }
 	
@@ -73,7 +75,7 @@ class KothListener implements Listener
          
             $p->addTitle($this->plugin->getData("still_running_title"),$this->plugin->getData("still_running_sub"));
 
-		$this->plugin->sendRandomSpot($p);
+		$this->arena->sendRandomSpot($p);
 		}
 
     }
@@ -89,7 +91,7 @@ $event->setPlayerClass(KothPlayer::class);
         $player = $ev->getPlayer();
         if($player instanceof KothPlayer){
         if($player->isInGame()){
-        $this->plugin->removePlayer($ev->getPlayer());
+        $this->arena->removePlayer($ev->getPlayer());
     }
         }
     }
@@ -99,7 +101,7 @@ $event->setPlayerClass(KothPlayer::class);
       if($player instanceof KothPlayer){
           if($player->isInGame()){
        if(substr($ev->getMessage(), 0, 6) === "/spawn"){
-            $this->plugin->removePlayer($ev->getPlayer());
+            $this->arena->removePlayer($ev->getPlayer());
         }
          if(substr($ev->getMessage(), 0, 2) === "/h" || substr($ev->getMessage(), 0, 5) === "/home" || substr($ev->getMessage(), 0, 4) === "/afk" || substr($ev->getMessage(), 0, 8) === "/godmode" || substr($ev->getMessage(), 0, 4) === "/god"){
             $ev->setCancelled();
