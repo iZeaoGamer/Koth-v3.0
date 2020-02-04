@@ -54,9 +54,9 @@ class KothTimer extends Task
 
        }
 
-       $this->plugin->setKothTimer($this->plugin->getEventTime() - 1);
+       $this->plugin->setKothTimer($this->plugin->getKothTimer() - 1);
 
-       $this->time = $this->plugin->getEventTime();
+       $this->time = $this->plugin->getKothTimer();
 
        
 
@@ -106,7 +106,7 @@ class KothTimer extends Task
 
          //   $this->getHandler()->cancel();
 
-         $this->plugin->setKothTimer($this->plugin->msg->get("event_time"));
+         $this->plugin->setKothTimer($this->plugin->getEventTime());
 
    //     }
 
