@@ -38,8 +38,6 @@ class KothMain extends PluginBase
 
     private $fac;
 
-    public $kothtime = 10800;
-
     public $discord;
 
        public $stopped = true;
@@ -137,7 +135,7 @@ $all = $this->c->getAll();
 
             $this->koth = new Config($this->getDataFolder() . "kothinfo.yml", Config::YAML);
 
-            $this->koth->set("eventtime", 10800);
+            $this->koth->set("eventtime", $this->getEventTime());
 
             $this->koth->save();
 
