@@ -75,7 +75,8 @@ class KothListener implements Listener
          
             $p->addTitle($this->plugin->getData("still_running_title"),$this->plugin->getData("still_running_sub"));
 
-		$this->arena->sendRandomSpot($p);
+		  $old = $this->arena->spawns[array_rand($this->arena->spawns)];
+		$ev->setRespawnPosition($old);
 		}
 
     }
