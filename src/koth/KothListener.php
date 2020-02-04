@@ -95,25 +95,13 @@ $event->setPlayerClass(KothPlayer::class);
     }
 
     public function onCommand(PlayerCommandPreprocessEvent $ev){
-
-    //  $spawn = new Position(204, 189, 329, Server::getInstance()->getLevelByName("FacSpawn2"));
-
-      //if($spawn->distance($ev->getPlayer() < 200)){
-
       $player = $ev->getPlayer();
-
       if($player instanceof KothPlayer){
-
           if($player->isInGame()){
-
        if(substr($ev->getMessage(), 0, 6) === "/spawn"){
-
             $this->plugin->removePlayer($ev->getPlayer());
-
         }
-
          if(substr($ev->getMessage(), 0, 2) === "/h" || substr($ev->getMessage(), 0, 5) === "/home" || substr($ev->getMessage(), 0, 4) === "/afk" || substr($ev->getMessage(), 0, 8) === "/godmode" || substr($ev->getMessage(), 0, 4) === "/god"){
-
             $ev->setCancelled();
 
             $ev->getPlayer()->sendMessage(TextFormat::colorize("&cYou cannot use this command in koth."));
