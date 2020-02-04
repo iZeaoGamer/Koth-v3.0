@@ -47,7 +47,7 @@ class KothTimer extends Task
 
        if($this->time === 300 || $this->time === 600 || $this->time === 1800 || $this->time === 3600){
 
-           if($this->plugin->get("discord-support"){
+           if($this->plugin->get("discord-support")){
            $this->plugin->discord->sendToDiscord("**KOTH EVENT**\nKoth event is starting in " . gmdate("H:i:s", $this->time) . " on OP Factions.",
 
            $this->plugin->msg->get("webhook-url"),
@@ -61,7 +61,7 @@ class KothTimer extends Task
    
 
        if ($this->time == 30 || $this->time == 15 || $this->time < 6){
-if($this->plugin->get("discord-support"){
+if($this->plugin->get("discord-support")){
            
            $this->plugin->discord->sendToDiscord("**KOTH EVENT**\nKoth timer is starting in " . gmdate("i:s", $this->time) . " on OP Factions.",
 
@@ -79,7 +79,7 @@ if($this->plugin->get("discord-support"){
         if ($this->time < 1){
 
             $this->arena->preStart();
-if($this->plugin->get("discord-support"){
+if($this->plugin->get("discord-support")){
            
             $this->plugin->discord->sendToDiscord("**KOTH EVENT**\nKoth game is about to start! Join a koth game by going on OP Factions, and type /koth join\nIP: play.zectorpe.ml Port: 19132",
 
