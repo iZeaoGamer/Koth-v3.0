@@ -75,6 +75,7 @@ class KothMain extends PluginBase
     public function onEnable() : void{
 
         @mkdir($this->getDataFolder());
+	    $this->koth = new Config($this->getDataFolder() . "kothinfo.yml", Config::YAML);
 
         $this->msg = new Config($this->getDataFolder()."config.yml",Config::YAML,[
 
@@ -131,9 +132,10 @@ class KothMain extends PluginBase
 $all = $this->c->getAll();
         if (isset($all["spawns"]) && $all["p1"] && $all["p2"]){
 
+		
          if(!file_exists($this->getDataFolder() . "kothinfo.yml")){
 
-            $this->koth = new Config($this->getDataFolder() . "kothinfo.yml", Config::YAML);
+         
 
             $this->koth->set("eventtime", $this->getEventTime());
 
@@ -154,7 +156,7 @@ if($this->msg->get("discord-support")){
 
         $all = $this->c->getAll();
 
-      
+     
             $this->arena = new KothArena($this,$all["spawns"],["p1" => $all["p1"], "p2" => $all["p2"]]);
 
             $this->getLogger()->info("KOTH Arena Loaded Successfully");
