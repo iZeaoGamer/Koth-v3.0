@@ -127,7 +127,7 @@ class KothMain extends PluginBase
 
         ]);
 
-          // $this->getServer()->getCommandMap()->register("koth", new KothCommand("koth",$this));
+      
 
         $this->c = new Config($this->getDataFolder()."arena.yml", Config::YAML);
 $all = $this->c->getAll();
@@ -145,7 +145,7 @@ $all = $this->c->getAll();
        
         }
 
-      //  $this->discord = Server::getInstance()->getPluginManager()->getPlugin("ZectorPEPlayer");
+  
 	  $this->discord = new DiscordIntergration();
 
         $this->koth = new Config($this->getDataFolder() . "kothinfo.yml");
@@ -181,9 +181,13 @@ $all = $this->c->getAll();
 
         $this->fac = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
 
-        if ($this->fac == null) $this->getLogger()->critical("FactionsPro Plugin not found... Disabled {faction} support!");
+        if ($this->fac == null){
+$this->getLogger()->critical("FactionsPro Plugin not found... Disabled {faction} support!");
+	}else{
+         $this->getLogger()->notice("FactionsPro plugin found. Enabled {faction} support.");
 
         }
+    }
 
     public function getFaction(Player $player){
 
@@ -216,7 +220,7 @@ $all = $this->c->getAll();
 		$this->msg->save();
 	}
 	public function getGameTime(){
-			return $this->msg->get("game_time");
+	       return $this->msg->get("game_time");
 	}
 	
      public function startKoth(){
@@ -276,7 +280,7 @@ $all = $this->c->getAll();
 
             $this->setStartKoth(false);
 
-            //$this->setStarted(false);
+         
 
         }
 
