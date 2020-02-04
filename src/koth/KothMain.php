@@ -142,9 +142,10 @@ $all = $this->c->getAll();
             $this->getLogger()->info("Koth timer config has been generated successfully.");
        
         }
-
+if($this->msg->get("discord-support")){
   
 	  $this->discord = new DiscordIntergration();
+}
 
         $this->koth = new Config($this->getDataFolder() . "kothinfo.yml");
 
