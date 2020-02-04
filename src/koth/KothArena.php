@@ -70,11 +70,14 @@ class KothArena
         // $this->hill = $hill;
 
     //     $this->world = $world;
-
+	   
     
 
       foreach($spawns as $val => $pos){
 				$strPos = explode(':', $pos);
+	      if(!$this->plugin->getServer()->isLevelLoaded($strPos[3])){
+	      Server::getInstance()->loadLevel($strPos[3]);
+	      }
 
 				$this->spawns[] = new Position(intval($strPos[0]), intval($strPos[1]), intval($strPos[2]), $main->getServer()->getLevelByName($strPos[3]));
 
