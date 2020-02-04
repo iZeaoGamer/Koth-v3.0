@@ -81,7 +81,7 @@ class KothMain extends PluginBase
         $this->msg = new Config($this->getDataFolder()."config.yml",Config::YAML,[
 
             "capture_time" => 100,
-			"player-creation" => false,
+			"player-creation" => true,
 
             "game_time" => 10,
 			"event_time" => 86400,
