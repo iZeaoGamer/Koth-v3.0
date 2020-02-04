@@ -99,7 +99,7 @@ class KothCommand extends Command{
                  
                 } else if (strtolower($args[0]) === "start"){
                     if (!$sender->hasPermission("koth.start")) return true;
-                             if(!$this->plugin->hasStartedKoth() || !$this->plugin->isRunning()){
+                             if(!$this->plugin->hasStartedKoth() && !$this->plugin->isRunning()){
                         $this->plugin->startKoth();
                          $this->plugin->setStartKoth(true);
                          $this->plugin->setStopKoth(false);
@@ -110,7 +110,7 @@ class KothCommand extends Command{
 
                 } else if (strtolower($args[0]) === "stop"){
                     if (!$sender->hasPermission("koth.stop")) return true;
-                             if(!$this->plugin->hasStoppedKoth() || $this->plugin->isRunning()){
+                             if(!$this->plugin->hasStoppedKoth() && $this->plugin->isRunning()){
                          $this->plugin->stopKoth();
                          $this->plugin->setStopKoth(true);
                          $this->plugin->setStartKoth(false);
@@ -133,7 +133,7 @@ class KothCommand extends Command{
             if (isset($args[0])){
                 if (strtolower($args[0]) === "start"){
                    // if($sender instanceof KothPlayer){
-                             if(!$this->plugin->hasStartedKoth() || !$this->plugin->isRunning()){
+                             if(!$this->plugin->hasStartedKoth() && !$this->plugin->isRunning()){
                          $this->plugin->startKoth();
                          $this->plugin->setStartKoth(true);
                          $this->plugin->setStopKoth(false);
@@ -143,7 +143,7 @@ class KothCommand extends Command{
                              }
 
                 } else if (strtolower($args[0]) === "stop"){
-                             if(!$this->plugin->hasStoppedKoth() || $this->plugin->isRunning()){
+                             if(!$this->plugin->hasStoppedKoth() && $this->plugin->isRunning()){
                          $this->plugin->stopKoth();
                         $this->plugin->setStopKoth(true);
                          $this->plugin->setStartKoth(false);
