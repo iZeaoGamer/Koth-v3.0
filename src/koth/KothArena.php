@@ -225,6 +225,7 @@ class KothArena
 
         $this->running = true;
 		$this->plugin->started = true;
+		$this->plugin->stopped = false;
 
     }
 
