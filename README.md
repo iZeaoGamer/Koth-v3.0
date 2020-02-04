@@ -30,7 +30,7 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 - [x] Event timers + Game-timers can now be translated to seconds/ticks. You can type /koth seteventtime <game-in-seconds>, and it will tell you right away how many seconds that is in minutes. 
 
-- [ ] Configurable rewards
+- [x] Configurable rewards
 
 - [x] Add FactionsPro Support
 
