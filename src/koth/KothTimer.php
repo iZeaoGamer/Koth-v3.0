@@ -55,6 +55,7 @@ class KothTimer extends Task
             $this->plugin->msg->get("bot-displayname"));
 
        }
+       }
 
            
 
