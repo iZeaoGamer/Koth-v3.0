@@ -56,7 +56,7 @@ class KothTimer extends Task
 
        $this->plugin->setKothTimer($this->plugin->getEventTime() - 1);
 
-       $this->time = $this->plugin->getEventTime());
+       $this->time = $this->plugin->getEventTime();
 
        
 
