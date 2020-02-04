@@ -247,8 +247,8 @@ class KothArena
 
         $msg = $this->plugin->getData("win");
 
-        $msg = str_replace("{player}","{faction}",$player->getName(),$this->plugin->getFaction($player),$msg);
-
+        $msg = str_replace("{player}", $player->getName(), $msg);
+	$msg = str_replace("{faction}", $this->plugin->getFaction($player), $msg);    
         $msg = $prefix.$msg;
 if($this->plugin->msg->get("discord-support")){
         $this->plugin->discord->sendToDiscord("**KOTH EVENT ENDED**\nThe koth event has ended, and the winner of today’s koth event, is " . $player->getName() . " in faction: " . $this->plugin->getFaction($player), $this->plugin->msg->get("webhook-url"), $this->plugin->msg->get("bot-displayname"));
@@ -398,38 +398,18 @@ if($this->plugin->msg->get("discord-support")){
     }
 
     public function giveRewards(Player $player){
-
-    //    $rewards = $this->plugin->getRewards();
-
+        $rewards = $this->plugin->getRewards();
+	    $faction = $this->plugin->getFaction($player);
         $name = $player->getName();
-
-      //  foreach ($rewards as $key => $reward){
-
-          //  $reward = str_replace("{player}",$name,$reward);
-
-          $facpro = Server::getInstance()->getPluginManager()->getPlugin("FactionsPro");
-
-          
-
-          $playerf = $facpro->getPlayerFaction($name);
-
-          $facpro->addFactionPower($playerf, 100);
-
-         $item = Item::get(54, 1, 10);
-
-		    $item->setCustomName(TextFormat::colorize("&c&lBloody container"));
-
-		    $item->setLore([TextFormat::colorize("&d* &5Contains great rewards, and is simply a bloody container.\n&d* &5You can either: Get a lucky crate, or unlucky crate.\n&d* &5Unlucky crate: &aDon’t receive anything\n&d* &5Lucky crate: &aReceive an reward")]);
-
-		    $player->getInventory()->addItem($item);
-
+        foreach ($rewards as $key => $reward){
+            $reward = str_replace("{player}", $name, $reward);
+		$reward = str_replace("{faction}", $faction, $reward);
+            $this->plugin->getServer()->dispatchCommand(new ConsoleCommandSender(),$reward);
+        }
+    }
 		   
 
-          
-
-            //$this->plugin->getServer()->dispatchCommand(new ConsoleCommandSender(), );
-
-        }
+       
 
     
 
