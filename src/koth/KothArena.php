@@ -159,8 +159,6 @@ class KothArena
 
             unset($this->players[$player]);
 
-                 //   $this->playerOldNameTags = [];
-
         }
 
     }
@@ -204,8 +202,6 @@ class KothArena
             $p = $this->plugin->getServer()->getPlayer($player);
 
             if ($p instanceof Player){
-
-              //  if (count($this->playersInBox() !== 0)){
 
               if($this->inCapture($p)){
 
@@ -271,7 +267,7 @@ if($this->plugin->msg->get("discord-support")){
           $player->teleport($this->plugin->getServer()->getDefaultLevel()->getSpawnLocation());
        
 
-         if($player instanceof KothPlayer && $player->isInGame()){
+         if($player instanceof KothPlayer){
 
             $player->setInGame(false);
 			if($this->plugin->msg->get("discord-support")){
@@ -285,10 +281,6 @@ if($this->plugin->msg->get("discord-support")){
 
     public function sendProgress(Player $p, int $time){
 
-  //  foreach($this->players as $player){
-
-    //    if($player instanceof Player){
-
         $tip = TextFormat::colorize("&aCapture point &b");
 
         $max = $this->plugin->getData("capture_time");
@@ -297,13 +289,11 @@ if($this->plugin->msg->get("discord-support")){
 
         $percent = (($time / $max)*100).'%';
 
-       // foreach ($this->players as $player => $time){
+       
 
         $this->sendTip(TextFormat::colorize("&b" . $p->getName() . " &ais Capturing point: &b" . $percent));
 
-      //  }
-
- //   }
+     
 
  if($percent == 1){
 
@@ -332,11 +322,6 @@ if($this->plugin->msg->get("discord-support")){
     if($percent > 94){
 
         Server::getInstance()->broadcastMessage(TextFormat::colorize("&b" . $p->getName() . " &6has captured the point &b" . $percent . " &6times."));
-
-   // }elseif($time === 75){
-
- //   Server::getInstance()->broadcastMessage(TextFormat::colorize("" . $p->getName() . " &6has captured the point &b" . $time . " &6times."));
-
         
 
     }
@@ -349,7 +334,8 @@ if($this->plugin->msg->get("discord-support")){
 
             $p = $this->plugin->getServer()->getPlayer($player);
 
-            if ($p instanceof Player){
+            if ($p instanceof KothPlayer){
+		    $p->setInGame(false);
 
                  $p->teleport($this->plugin->getServer()->getDefaultLevel()->getSpawnLocation());
                 $p->sendMessage(TextFormat::colorize("&6Game has ended."));
@@ -410,29 +396,20 @@ if($this->plugin->msg->get("discord-support")){
             $this->plugin->getServer()->dispatchCommand(new ConsoleCommandSender(),$reward);
         }
     }
-		   
-
-       
-
-    
-
     public function addPlayer(Player $player){
 
         $this->players[$player->getName()] = $this->plugin->getData("capture_time");
 
         $this->sendRandomSpot($player);
 
-        if($player instanceof KothPlayer && !$player->isInGame()){
+        if($player instanceof KothPlayer){
 
             $player->setInGame(true);
 if($this->plugin->msg->get("discord-support")){
             $this->plugin->discord->sendToDiscord("**KOTH JOIN**\n" . $player->getName() . " joined the koth game using /koth join.", $this->plugin->msg->get("webhook-url"), $this->plugin->msg->get("bot-displayname"));
 
-           // https://discordapp.com/api/webhooks/624242971944026124/RUt3NvnHIzF-LEjgATkL_KKCycvHdrSfA8unCAJzWe6atEg4b84zOfBAIk-3vj8ihQAS
-
-        }
-
-    }
+}
+	}
 	}
 	public function sendRandomSpot(Player $player) : bool{
 		$old = $this->spawns[array_rand($this->spawns)];
