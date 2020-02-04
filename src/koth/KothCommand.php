@@ -13,6 +13,7 @@ class KothCommand extends Command{
     {
         parent::__construct($name, "");
         $this->plugin = $main;
+	    $this->arena = $main->arena;
     }
     public function execute(CommandSender $sender, $commandLabel, array $args){
         if ($sender instanceof KothPlayer){
@@ -27,7 +28,7 @@ class KothCommand extends Command{
                             $sender->sendMessage(TextFormat::colorize("&cYou aren't in a koth game."));
                             }else{
                      
-                         $this->plugin->sentToKoth($sender);
+                       $this->plugin->sentToKoth($sender, true);
                         $sender->sendMessage(TextFormat::colorize("&6You have left the game."));
                         $sender->setInGame(false);
 						 }
@@ -98,7 +99,7 @@ class KothCommand extends Command{
                  
                 } else if (strtolower($args[0]) === "start"){
                     if (!$sender->hasPermission("koth.start")) return true;
-                             if(!$this->plugin->hasStartedKoth()){
+                             if(!$this->plugin->hasStartedKoth() && !$this->plugin->isRunning()){
                         $this->plugin->startKoth();
                          $this->plugin->setStartKoth(true);
                          $this->plugin->setStopKoth(false);
@@ -109,7 +110,7 @@ class KothCommand extends Command{
 
                 } else if (strtolower($args[0]) === "stop"){
                     if (!$sender->hasPermission("koth.stop")) return true;
-                             if(!$this->plugin->hasStoppedKoth()){
+                             if(!$this->plugin->hasStoppedKoth() && $this->plugin->isRunning()){
                          $this->plugin->stopKoth();
                          $this->plugin->setStopKoth(true);
                          $this->plugin->setStartKoth(false);
@@ -132,7 +133,7 @@ class KothCommand extends Command{
             if (isset($args[0])){
                 if (strtolower($args[0]) === "start"){
                    // if($sender instanceof KothPlayer){
-                             if(!$this->plugin->hasStartedKoth()){
+                             if(!$this->plugin->hasStartedKoth() && !$this->plugin->isRunning()){
                          $this->plugin->startKoth();
                          $this->plugin->setStartKoth(true);
                          $this->plugin->setStopKoth(false);
@@ -142,7 +143,7 @@ class KothCommand extends Command{
                              }
 
                 } else if (strtolower($args[0]) === "stop"){
-                             if(!$this->plugin->hasStoppedKoth()){
+                             if(!$this->plugin->hasStoppedKoth() && $this->plugin->isRunning()){
                          $this->plugin->stopKoth();
                         $this->plugin->setStopKoth(true);
                          $this->plugin->setStartKoth(false);
