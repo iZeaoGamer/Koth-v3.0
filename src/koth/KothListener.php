@@ -139,6 +139,3 @@ $event->setPlayerClass(KothPlayer::class);
     }
 
 }
-
-
-}
