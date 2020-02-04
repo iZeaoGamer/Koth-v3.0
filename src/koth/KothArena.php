@@ -28,6 +28,7 @@ use pocketmine\item\Item;
 
 use pocketmine\utils\TextFormat;
 use pocketmine\math\Vector3;
+use FactionsPro\FactionMain;
 
 class KothArena
 
@@ -43,33 +44,19 @@ class KothArena
 
     private $p2;
 
-    public $hill = [];
 
     public $plugin;
 
-    public $spawnCounter;
 
     private $timer = null;
 
-    public $oldKing;
-
-    public $king;
-
-    public $playerOldNameTags = [];
+ 
 
     
 
     public function __construct(KothMain $main, $spawns, $capture){
 
         $this->plugin = $main;
-
-         $this->spawnCounter = 0;
-
-         //this->king = null;
-
-        // $this->hill = $hill;
-
-    //     $this->world = $world;
 	   
     
 
@@ -140,9 +127,7 @@ class KothArena
 
      public function resetAllPlayers(){
 
-        $this->king = null;
-
-        $this->oldKing = null;
+     
 
         foreach ($this->players as $player => $time){
 
@@ -180,6 +165,8 @@ class KothArena
         $this->players = [];
 
         $this->running = false;
+	     $this->plugin->started = false;
+	    $this->plugin->stopped = true;
 
         $timer = $this->timer;
 
@@ -237,6 +224,7 @@ class KothArena
         $this->timer = $task;
 
         $this->running = true;
+		$this->plugin->started = true;
 
     }
 
@@ -252,7 +240,8 @@ class KothArena
 if($this->plugin->msg->get("discord-support")){
         $this->plugin->discord->sendToDiscord("**KOTH EVENT ENDED**\nThe koth event has ended, and the winner of today’s koth event, is " . $player->getName() . " in faction: " . $this->plugin->getFaction($player), $this->plugin->msg->get("webhook-url"), $this->plugin->msg->get("bot-displayname"));
 }
-        $this->plugin->getServer()->broadcastMessage(TextFormat::colorize("&b" . $player->getName() . " &6in &b" . $this->plugin->getFaction($player) . " &6has won the koth match, and has received some goodies!"));
+	    $factionMode = ($this->fac instanceof FactionMain) ? " in Faction " . $this->getFaction($player) : "";
+        $this->plugin->getServer()->broadcastMessage(TextFormat::colorize($player->getName() . $factionMode . " &6has won the koth match, and has received some goodies!"));
 
         $this->giveRewards($player);
 
