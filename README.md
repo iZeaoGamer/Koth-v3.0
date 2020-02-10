@@ -52,6 +52,8 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 - [x] Allow koth worlds to load before the koth arena database get's loaded. This means you will no longer be required to use any external plugins that relate to multiworld.
 
+- [x] Fixed Respawn position from becoming broken, and not teleporting you to the koth game upon death.
+
 - [ ] Revamp databases, including: Messages, and more configurable options. 
 
 - + And so much more! Just look for yourself, it's more awesome than ever!
