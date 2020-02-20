@@ -241,7 +241,7 @@ class KothArena
 if($this->plugin->msg->get("discord-support")){
         $this->plugin->discord->sendToDiscord("**KOTH EVENT ENDED**\nThe koth event has ended, and the winner of today’s koth event, is " . $player->getName() . " in faction: " . $this->plugin->getFaction($player), $this->plugin->msg->get("webhook-url"), $this->plugin->msg->get("bot-displayname"));
 }
-	    $factionMode = ($this->fac instanceof FactionMain) ? " in Faction " . $this->getFaction($player) : "";
+	    $factionMode = ($this->plugin->fac instanceof FactionMain) ? " in Faction " . $this->getFaction($player) : "";
         $this->plugin->getServer()->broadcastMessage(TextFormat::colorize($player->getName() . $factionMode . " &6has won the koth match, and has received some goodies!"));
 
         $this->giveRewards($player);
