@@ -1,7 +1,7 @@
 <?php 
 namespace koth;
-use CortexPE\DiscordWebHookAPI\Webhook;
-use CortexPE\DiscordWebHookAPI\Message;
+use CortexPE\DiscordWebhookAPI\Webhook;
+use CortexPE\DiscordWebhookAPI\Message;
 
 class DiscordIntergration {
 	
