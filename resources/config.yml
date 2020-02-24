@@ -48,7 +48,7 @@ rewards:
 - give {player} diamond 2
 # Rewards giving if a player wins the koth game. - Re-coding rewards to add more compatibilty soon).
 
-player-creation: false
+player-creation: true
 # Enable this to allow built-in KothPlayer support. If this option is set to false, then you're allowing other plugins to generate KothPlayer. This does depend on what plugins you're using to generate player data.
 # Note that other plugins will need to extend the class KothPlayer from their original Player::class in the plugin.
 
@@ -57,7 +57,7 @@ discord-support: true
 # If enabled, you're willing to allow automatic support with any discord API Web-hooks virions.
 # At the moment, we only support CortexPE's WebHook virion, which is automatically installed if you use a .phar file for this plugin.
 
-webhook-url: https://discordapp.com/api/webhooks/624242971944026124/RUt3NvnHIzF-LEjgATkL_KKCycvHdrSfA8unCAJzWe6atEg4b84zOfBAIk-3vj8ihQAS
+webhook-url: ”https://discordapp.com/api/webhooks/624242971944026124/RUt3NvnHIzF-LEjgATkL_KKCycvHdrSfA8unCAJzWe6atEg4b84zOfBAIk-3vj8ihQAS”
 # This is the URL of the discord webhook you'd like to use. Please seek advice for discord webhooks if you need any help.
 
 bot-displayname: Koth Event
