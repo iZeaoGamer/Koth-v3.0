@@ -51,6 +51,7 @@ rewards:
 player-creation: true
 # Enable this to allow built-in KothPlayer support. If this option is set to false, then you're allowing other plugins to generate KothPlayer. This does depend on what plugins you're using to generate player data.
 # Note that other plugins will need to extend the class KothPlayer from their original Player::class in the plugin.
+# For more information on how to use this option, please check out this documentation: https://github.com/iZeaoGamer/Koth-v3.0/wiki/KothPlayer-documentation
 
 ## Discord settings
 discord-support: true
