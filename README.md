@@ -46,7 +46,7 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 - [x] Add discord virion intergration
 
-- [x] Add WorldLoader-All support to allow worlds to load before the plugin does.
+- [x] No longer require any external plugins to run this plugin.
 
 - [x] Add KothPlayer class, where it'll store all of the player data. At the moment, it only supports isInGame(), and setInGame(bool). We may add more to this in the future.
 
