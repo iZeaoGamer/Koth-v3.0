@@ -1,6 +1,6 @@
 name: KingOfTheHill
 author: iZeaoGamer
 description: Simple King Of The Hill PMMP Plugin
-version: 3.0.0-ALPHA2
+version: 3.0.0-ALPHA3
 main: koth\KothMain
 api: [3.0.0]
