@@ -77,54 +77,8 @@ class KothMain extends PluginBase
         @mkdir($this->getDataFolder());
 	    $this->koth = new Config($this->getDataFolder() . "kothinfo.yml", Config::YAML);
 
-        $this->msg = new Config($this->getDataFolder()."config.yml",Config::YAML,[
-
-            "capture_time" => 100,
-			"player-creation" => true,
-
-            "game_time" => 10,
-			"event_time" => 86400,
-			
-			"discord-support" => true,
-			
-			"webhook-url" => "https://discordapp.com/api/webhooks/discord-webhook-goes-here",
-
-			"bot-displayname" => "Koth Event",
-            "reset_capture_progress" => true,
-
-            "prefix" => "[KOTH] ",
-
-            "starting" => "Game starting in {sec}. Join Game now! (/koth join)",
-
-            "begin" => "KOTH Started! (/koth join)",
-
-            "joined" => "Joined game successfully!, Be the first to capture the area now!",
-
-            "win" => "{faction} | {player} has captured the area and won the event!",
-
-            "end" => "Event has ended!",
-
-            "not_running" => "There is no KOTH event running at the moment!",
-
-            "still_running_title" => "KOTH Running!",
-
-            "still_running_sub" => "Join now with /koth join !",
-
-            "progress" => "Capturing... {percent}%",
-
-            "end_game" => "Game Ended!",
-
-            "game_bar" => "KOTH Time Left: {time}",
-
-            "rewards" => [
-
-                "givemoney {player} 1000",
-
-                "give {player} diamond 2"
-
-        ]
-
-        ]);
+        $this->saveDefaultConfig();
+	    $this->msg = $this-<getConfig();
 
       
 
