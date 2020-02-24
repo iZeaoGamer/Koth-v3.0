@@ -78,7 +78,7 @@ class KothMain extends PluginBase
 	    $this->koth = new Config($this->getDataFolder() . "kothinfo.yml", Config::YAML);
 
         $this->saveDefaultConfig();
-	    $this->msg = $this-<getConfig();
+	    $this->msg = $this->getConfig();
 
       
 
