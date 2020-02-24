@@ -54,6 +54,8 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 - [x] Fixed Respawn position from becoming broken, and not teleporting you to the koth game upon death.
 
+- [x] Add KothPlayer::class API documentation for developers. Done! You can check it out using this link here: https://github.com/iZeaoGamer/Koth-v3.0/wiki/KothPlayer-documentation
+
 - [ ] Revamp databases, including: Messages, and more configurable options. 
 
 - + And so much more! Just look for yourself, it's more awesome than ever!
