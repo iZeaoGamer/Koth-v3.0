@@ -36,7 +36,7 @@ class KothMain extends PluginBase
 
     public $arena = null;
 
-    private $fac;
+    public $fac;
 
     public $discord;
 
