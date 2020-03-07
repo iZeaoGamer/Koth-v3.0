@@ -81,8 +81,8 @@ if($this->plugin->msg->get("discord-support")){
 
             $this->arena->preStart();
 if($this->plugin->msg->get("discord-support")){
-           
-            $this->plugin->discord->sendToDiscord("**KOTH EVENT**\nKoth game is about to start! Join a koth game by going on OP Factions, and type /koth join\nIP: play.zectorpe.ml Port: 19132",
+           //todo make messages configurable. Priority: HIGH
+            $this->plugin->discord->sendToDiscord("**KOTH EVENT**\nKoth game is about to start! Join a koth game by going on the server, and type /koth join",
 
             $this->plugin->msg->get("webhook-url"),
 
