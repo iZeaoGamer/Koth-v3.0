@@ -58,6 +58,8 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 - [ ] Revamp databases, including: Messages, and more configurable options. 
 
+- [ ] ScoreBoard implementation
+
 - + And so much more! Just look for yourself, it's more awesome than ever!
 
 
