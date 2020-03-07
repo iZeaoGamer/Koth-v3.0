@@ -48,7 +48,7 @@ class KothTimer extends Task
        if($this->time === 300 || $this->time === 600 || $this->time === 1800 || $this->time === 3600){
 
            if($this->plugin->msg->get("discord-support")){
-           $this->plugin->discord->sendToDiscord("**KOTH EVENT**\nKoth event is starting in " . gmdate("H:i:s", $this->time) . " on OP Factions.",
+           $this->plugin->discord->sendToDiscord("**KOTH EVENT**\nKoth event is starting in " . gmdate("H:i:s", $this->time) . " on the server.",
 
            $this->plugin->msg->get("webhook-url"),
 
@@ -64,7 +64,7 @@ class KothTimer extends Task
        if ($this->time == 30 || $this->time == 15 || $this->time < 6){
 if($this->plugin->msg->get("discord-support")){
            
-           $this->plugin->discord->sendToDiscord("**KOTH EVENT**\nKoth timer is starting in " . gmdate("i:s", $this->time) . " on OP Factions.",
+           $this->plugin->discord->sendToDiscord("**KOTH EVENT**\nKoth timer is starting in " . gmdate("i:s", $this->time) . " on the server.",
 
            $this->plugin->msg->get("webhook-url"),
 
