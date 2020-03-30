@@ -15,6 +15,7 @@ use koth\arenas\KothArena;
 use koth\listeners\KothListener;
 use koth\commands\KothCommand;
 use koth\lang\KothLanguage;
+use koth\intergrations\DiscordIntergration;
 
 
 

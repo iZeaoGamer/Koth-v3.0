@@ -1,5 +1,5 @@
 <?php 
-namespace koth;
+namespace koth\intergrations;
 use CortexPE\DiscordWebhookAPI\Webhook;
 use CortexPE\DiscordWebhookAPI\Message;
 
