@@ -36,7 +36,7 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 - [x] Add Discord Support
 
-- [ ] Best customizable koth plugin ever to be made, free
+- [x] Best customizable koth plugin ever to be made, free
 
 - [x] Fixed koth teleportation from not teleporting them to exactly the correct world.
 
@@ -56,7 +56,7 @@ A customizable plugin + Mini-Game, made for Faction servers, which offers: Many 
 
 - [x] Add KothPlayer::class API documentation for developers. Done! You can check it out using this link here: https://github.com/iZeaoGamer/Koth-v3.0/wiki/KothPlayer-documentation
 
-- [ ] Revamp databases, including: Messages, and more configurable options. 
+- [x] Revamp databases, including: Messages, and more configurable options. 
 
 - [ ] ScoreBoard implementation
 

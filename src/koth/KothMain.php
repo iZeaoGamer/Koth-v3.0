@@ -1,16 +1,5 @@
 <?php
 
-/**
-
- * Created by PhpStorm
-
- * User: 
-
- * Date: 
-
- * Time: 
-
- */
 
 namespace koth;
 
@@ -20,9 +9,13 @@ use pocketmine\plugin\PluginBase;
 
 use pocketmine\utils\Config;
 
-use iZeaoGamer\ZectorPEPlayer\ZectorPlayer;
-
 use pocketmine\Server;
+
+use koth\arenas\KothArena;
+use koth\listeners\KothListener;
+use koth\commands\KothCommand;
+use koth\lang\KothLanguage;
+
 
 
 
@@ -78,7 +71,8 @@ class KothMain extends PluginBase
 	    $this->koth = new Config($this->getDataFolder() . "kothinfo.yml", Config::YAML);
 
         $this->saveDefaultConfig();
-	    $this->msg = $this->getConfig();
+        $this->msg = $this->getConfig();
+        $this->lang = new KothLanguage($this);
 
       
 
@@ -95,7 +89,7 @@ $all = $this->c->getAll();
 
             $this->koth->save();
 
-            $this->getLogger()->info("Koth timer config has been generated successfully.");
+            $this->getLogger()->debug("Koth timer config has been generated successfully.");
        
         }
 if($this->msg->get("discord-support")){
@@ -113,7 +107,7 @@ if($this->msg->get("discord-support")){
      
             $this->arena = new KothArena($this,$all["spawns"],["p1" => $all["p1"], "p2" => $all["p2"]]);
 
-            $this->getLogger()->info("KOTH Arena Loaded Successfully");
+            $this->getLogger()->notice("KOTH Arena Loaded Successfully");
             $this->getScheduler()->scheduleDelayedRepeatingTask(new KothTimer($this, $this->arena), 20 * 1, 20 * 1);
 
         }else{
@@ -142,6 +136,9 @@ $this->getLogger()->critical("FactionsPro Plugin not found... Disabled {faction}
          $this->getLogger()->notice("FactionsPro plugin found. Enabled {faction} support.");
 
         }
+    }
+    public function getLang(): KothLanguage{
+        return $this->lang;
     }
 
     public function getFaction(Player $player){
@@ -240,6 +237,9 @@ $this->getLogger()->critical("FactionsPro Plugin not found... Disabled {faction}
         }
 
     }
+    public function getKothArena(): KothArena{
+        return $this->arena;
+    }
 
     public function getRewards() : array {
 
@@ -249,7 +249,7 @@ $this->getLogger()->critical("FactionsPro Plugin not found... Disabled {faction}
 
     }
 
-    public function setPoint(Player $player, $type){
+    public function setPoint(Player $player, string $type){
 
         $save = $player->getX().":".$player->getY().":".$player->getZ().":".$player->getLevel()->getName();
 

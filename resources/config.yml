@@ -1,70 +1,83 @@
 ---
-capture_time: 100
+# Koth Settings file!
+# Here, you can edit anything to how the game works, 
+# to what rewards it gives you.
+
 # Capture Time in seconds.
+capture_time: 100
 
-game_time: 10
 # How long a koth game lasts for in minutes.
+game_time: 10
 
-reset_capture_progress: true
-# Decide whether or not the capture progress resets whenever a player is out of the capture area zone.
 
+# Prefix for Koth commands.
 prefix: '[KOTH] '
-# Prefix for Koth commands. (Revamping this.)
 
-starting: Game starting in {sec}. Join Game now! (/koth join)
-# Starting koth message. (Revamping this.)
 
-begin: KOTH Started! (/koth join)
-# Koth started message. (Revamping this)
-joined: Joined game successfully!, Be the first to capture the area now!
-# Join koth game message. (Revamping this).
-
-win: '{faction} | {player} has captured the area and won the event!'
-# Koth win message (Revamping this).
-
-end: Event has ended!
-# Koth end message (Revamping this.)
-
-not_running: There is no KOTH event running at the moment!
-# Koth not running message.
-
-still_running_title: KOTH Running!
 # Koth running message.
- 
+still_running_title: KOTH Running!
+
+# Koth running subtitle message. 
 still_running_sub: Join now with /koth join !
-# Koth running subtitle message.
 
-progress: Capturing... {percent}%
-# Koth progress / capture perentage message. (Revamping this).
 
-end_game: Game Ended!
-# Koth end game message. (Revamping this).
-
-game_bar: 'KOTH Time Left: {time}'
-# Koth Time Left Message (Revamping this).
-
+# Rewards giving if a player wins the koth game. - Re-coding rewards to add more compatibilty soon).
 rewards:
 - givemoney {player} 1000
 - give {player} diamond 2
-# Rewards giving if a player wins the koth game. - Re-coding rewards to add more compatibilty soon).
 
-player-creation: true
 # Enable this to allow built-in KothPlayer support. If this option is set to false, then you're allowing other plugins to generate KothPlayer. This does depend on what plugins you're using to generate player data.
 # Note that other plugins will need to extend the class KothPlayer from their original Player::class in the plugin.
 # For more information on how to use this option, please check out this documentation: https://github.com/iZeaoGamer/Koth-v3.0/wiki/KothPlayer-documentation
+player-creation: true
 
 ## Discord settings
-discord-support: true
+
 # If enabled, you're willing to allow automatic support with any discord API Web-hooks virions.
 # At the moment, we only support CortexPE's WebHook virion, which is automatically installed if you use a .phar file for this plugin.
 
-webhook-url: ”https://discordapp.com/api/webhooks/624242971944026124/RUt3NvnHIzF-LEjgATkL_KKCycvHdrSfA8unCAJzWe6atEg4b84zOfBAIk-3vj8ihQAS”
+discord-support: true
 # This is the URL of the discord webhook you'd like to use. Please seek advice for discord webhooks if you need any help.
 
-bot-displayname: Koth Event
+webhook-url: ”https://discordapp.com/api/webhooks/624242971944026124/RUt3NvnHIzF-LEjgATkL_KKCycvHdrSfA8unCAJzWe6atEg4b84zOfBAIk-3vj8ihQAS”
+
 # Discord webhook displayname - The name that shows as a user on discord.
+bot-displayname: Koth Event
 
+# Event time, in seconds.
+# Note - Don't put event time on very low.
+# Example - If you've put your game time on 50 minutes,
+# don't put the event time lower than the game time.
+# This will cause issues in the future of using this plugin.
 event_time: 1000000
-# Event time, in seconds. Note - Don't put event time on very low. Example - If you've put your game time on 50 minutes, don't put the event time lower than the game time. This will cause issues in the future of using this plugin.
 
+# Teleporting type on certain events, such as: Game won, and when the game resets.
+# Default: Teleports you to the default level spawnpoint.
+# world-spawn: Teleports you to the current level's spawnpoint.
+# cords: Teleports you to the specific cordinates, as seen below.
+teleport-type: default
+
+# Coordinates to teleport to.
+# Note - You must have the option cords in teleport-type for this to work.
+
+coordinates: -5, 1, -10
+
+
+# The world to teleport to upon game reset.
+# This relies on coordinates, and cords in teleport-type.
+# If teleport-type is not set to cords, this option will be ignored automatically. 
+
+world: world
+# Command to execute if you want to leave a koth game.
+# This option could be an alternative to /koth leave if people want to use this command.
+
+spawn-command: "/spawn"
+
+# Commands to block whilst in a koth game.
+BlockedCommands:
+  - h
+  - home
+  - afk
+  - godmode
+  - god
 ...

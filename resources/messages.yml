@@ -1,0 +1,119 @@
+## Koth Messages file
+# Welcome to Koth Messages.yml file!
+# Here, you can configure almost everything when it comes to messages!
+# There are some tags which you can use in certain messages.
+
+# Koth Arena Messages:
+# Tags:
+  # {winner} - Replaces with the winner.
+  # {faction} - Replaces with the faction if factions support is enabled.
+  # {line} - Replaces with a new line.
+  KOTH_ENDED_DISCORD: "**KOTH EVENT ENDED**{line}The koth event has ended, and the winner of today’s koth event, is {player} in faction: {faction}"
+
+  # {faction} - Replaces with the faction if factions support is enabled.
+  # {player} - Replaces with the player name. 
+  KOTH_WON_FACTIONMODE: "&6{player} &5in faction &6{faction}"
+  
+  # {factionmode} - Replaces with KOTH_WON_FACTIONMODE Message
+
+  KOTH_WIN_MESSAGE: "{factionmode} &5has won &6Koth &5and has received some goodies!"
+
+  # {player} - Replaces with the player name.
+  KOTH_PLAYER_QUIT: "{player} has quit the Koth Game!"
+
+  # {player} - Replaces with the player name.
+  # {percent} - Replaces with the percentage of the capturing points.
+  CAPTURING_POINT_TIP: "{player} is capturing point {percent}"
+
+  # {percent} - Replaces with the percentage of the capturing points.
+  # {player} - Replaces with the player name.
+  CAPTURING_POINT_MESSAGE: "{player} is capturing point {percent}"
+
+  KOTH_ENDED_BROADCASTED: "Game ended"
+
+  # {player} - Replaces with the player name.
+  # {line} - Replaces with a new line.
+  KOTH_JOIN: "**KOTH JOIN**{line} {player} joined the koth game using /koth join."
+
+# Koth Commands Messages:
+  KOTH_NOT_INGAME: "&cYou aren't in a koth game."
+
+  KOTH_LEFT_SUCCESS: "&6You have left the game."
+
+  # {timer} - Replaces with the next koth event timer.
+  NO_KOTH_EVENT: "&cThere is no koth event happening at the moment. The next game begins in &4{timer}"
+
+  KOTH_ALREADY_INGAME: "&cYou're already in a koth game."
+
+  KOTH_JOINED_SUCCESS: "&6You have joined the koth event."
+
+  EVENTTIME_COMMAND_USAGE: "&cPlease use: /koth seteventtime <time-in-seconds>"
+  
+  MUST_BE_NUMBER: "Arguments must be a number."
+
+  # {time} - Replaces with the timer you set it as.
+  EVENT_SET: "&5Koth Event Timer has been set to &6{time}."
+
+  GAME_COMMAND_USAGE: "&cPlease use: /koth setgametime <game-time-in-seconds>"
+  
+  # {time} - Replaces with the timer you set it as.
+  GAME_SET: "&aKoth Game Time has been set to &b{time} seconds."
+
+  SET_SPAWN_SUCCESS: "&5Added spawnpoint to the koth arena."
+
+  SET_POINT_1: "&5Added Capture Point 1 (Set Capture Point 2 by using &6/koth pos2)"
+
+  SET_POINT_2: "&5Added Capture Point 2."
+
+  KOTH_START_EXECUTED: "&5Koth event has been manually started. CountDown started."
+
+  ALREADY_STARTED: "&cThe koth event has already started."
+
+  KOTH_STOPPED_EXECUTED: "&5Koth Event has been stopped manually!"
+
+  ALREADY_STOPPED: "&cKoth Event was never started, or the game has just finished."
+
+  KOTH_JOIN_MESSAGE: "Join Game using /koth join"
+
+  CONSOLE_MESSAGE: "Please use this command in-game!"
+
+  KOTH_PLAYER_HELP_TITLE: "&a&lKoth Player Commands"
+
+  # {line} - Replaces with a new line.
+  KOTH_PLAYER_HELP: "&b/koth join - &7Join a koth game.{line}&b/koth leave - &7Quits a koth game."
+
+  KOTH_ADMIN_HELP_TITLE: "&4&lKoth Admin Setup"
+
+  # {line} - Replaces with a new line.
+  KOTH_ADMIN_HELP: "&cHere are the 4 steps you need to setup before fully completing your koth arena.{line}&4&l1. &r&cGo to the first position capture point, and type /koth pos1 - Required{line}&4&l2. &r&cGo to the second position capture point, and type /koth pos2 - Required{line}&4&l3. &r&cOnce you set both positions of the koth capture point, you can use /koth setspawn, which will allow you to set as much spawn points as possible. - Required{line}&4&l4. &r&cWant to set the game timer? Now you can! Just type /koth setgametime <game-time-in-seconds> - Optional{line}&4&l5. &r&cWant to set the event timer? Now you can! Just type /koth seteventtime <game-time-in-seconds> - Required{line}&4&l6. &r&cOnce you've completed those three steps, you will be required to restart your server."
+
+# Koth Listener Messages:
+  KOTH_BLOCKED_COMMAND_MESSAGE: "&cYou cannot use this command whilst in a koth game."
+
+  KOTH_SURVIVAL_MODE: "&6Your gamemode has been changed to &bsurvival &6because you’re currently in a koth game."
+
+# Koth Timer functionalities
+  # {time} - Replaces with the game ending timer.
+  KOTH_TIME_LEFT_POPUP: "&5Game ending in &6{time}"
+
+  # {time} - Replaces with the game starting timer.
+  # {line} - Replaces with a new line.
+  KOTH_STARTING_DISCORD: "**KOTH EVENT**{line}Koth event is starting in {time} on the server!"
+
+  # {time} - Replaces with the game starting timer.
+  KOTH_STARTING_MESSAGE: "&5Koth Game starting in &6 {time}"
+
+  # {line} - Replaces with a new line.
+  KOTH_PRESTART_SUCCESS_DISCORD: "**KOTH EVENT**{line}Koth game is about to start! Join a koth game by going on the server, and type /koth join"
+
+  KOTH_PRESART_SUCCESS: "&6KOTH Event is starting.. Type: &b/koth join &6to join the koth event!"
+
+  # {time} - Replaces with the starting timer AKA CountDown.
+  KOTH_PRESTART_COUNTDOWN: "&5Koth Event Starts in &6{time}"
+
+  KOTH_BEGUN: "&5KOTH Event has started. Type: &6/koth join &5to join the koth event!"
+
+  # {time} - Replaces with the starting timer.
+  KOTH_STARTING_POPUP: "&5Game starting in &6{time}"
+
+  # End of line. No seriously, you're done!
