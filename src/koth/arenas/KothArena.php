@@ -149,12 +149,13 @@ class KothArena
             $spawn = $this->getServer()->getDefaultLevel()->getSpawnLocation();
         }elseif($this->plugin->getConfig()->get("teleport-type") === "world-spawn"){
                 $spawn = $event->getPlayer()->getLevel()->getSpawnLocation();
-                }elseif($this->plugin->getConfig()->get("teleport-type") === "cords");
+                }elseif($this->plugin->getConfig()->get("teleport-type") === "cords"){
                         $cords = explode(", ", $this->plugin->getConfig()->get("coordinates"));
                         $x = $cords[0];
                         $y = $cords[1];
                         $z = $cords[2];
             $spawn = new Position($x, $y, $z, $this->plugin->getConfig()->get("world"));
+	}
         $player->teleport($spawn);
         }
     
