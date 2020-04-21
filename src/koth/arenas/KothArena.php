@@ -156,9 +156,12 @@ class KothArena
                         $z = $cords[2];
             $spawn = new Position($x, $y, $z, $this->plugin->getConfig()->get("world"));
 	}
+	    if($spawn !== null && $player !== null){
         $player->teleport($spawn);
+	  //todo add error messages.
         }
     
+    }
 
     public function resetCapture(Player $player){
 
