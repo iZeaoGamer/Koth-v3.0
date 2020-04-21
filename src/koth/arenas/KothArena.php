@@ -134,7 +134,7 @@ class KothArena
             if ($p instanceof KothPlayer){
 
                 $p->setInGame(false);
-                $this->teleport($p);
+                $this->teleportFinish($p);
 
             
             }
@@ -144,9 +144,9 @@ class KothArena
         }
 
     }
-    public function teleport(Player $player){
+    public function teleportFinish(Player $player){
         if($this->plugin->getConfig()->get("teleport-type") === "default"){
-            $spawn = $this->getServer()->getDefaultLevel()->getSpawnLocation();
+            $spawn = $this->plugin->getServer()->getDefaultLevel()->getSpawnLocation();
         }elseif($this->plugin->getConfig()->get("teleport-type") === "world-spawn"){
                 $spawn = $event->getPlayer()->getLevel()->getSpawnLocation();
                 }elseif($this->plugin->getConfig()->get("teleport-type") === "cords"){
@@ -359,7 +359,7 @@ $this->addTitlePercentage($player, $percent);
             }
 
             
-             $this->teleport($p);
+             $this->teleportFinish($p);
 $p->sendMessage(KothLanguage::getMessage("KOTH_ENDED_BROADCASTED"));
 
             unset($this->players[$player]);
