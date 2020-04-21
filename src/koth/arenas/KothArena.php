@@ -278,11 +278,11 @@ if($this->plugin->msg->get("discord-support")){
     public function removePlayer(Player $player){
 
         if (isset($this->players[$player->getName()])) unset($this->players[$player->getName()]);
-
      
-       $this->teleport($player);
+      
 
          if($player instanceof KothPlayer){
+		 $this->teleportFinish($player);
 
             $player->setInGame(false);
          }
