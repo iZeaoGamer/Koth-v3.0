@@ -39,6 +39,7 @@ class KothTimer extends Task
 if($this->plugin->msg->get("discord-support")){
            
            $this->plugin->discord->sendToDiscord(KothLanguage::getMessage("KOTH_STARTING_DISCORD", [
+               "{line}" => "\n",
                "{time}" => gmdate("H:i:s", $this->time)]), $this->plugin->msg->get("webhook-url"), $this->plugin->msg->get("bot-displayname"));
        }
             
