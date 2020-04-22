@@ -27,7 +27,6 @@ use koth\KothPlayer;
 
 
 class KothArena
-
 {
 
     private $running = false;
@@ -45,10 +44,6 @@ class KothArena
 
 
     private $timer = null;
-
- 
-
-    
 
     public function __construct(KothMain $main, $spawns, $capture){
 
