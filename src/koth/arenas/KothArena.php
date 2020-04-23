@@ -308,7 +308,7 @@ $this->sendTip(KothLanguage::getMessage("CAPTURING_POINT_TIP", [
      
 
  if($percent == 1){
-$this->addTitlePercentage($player, $percent);
+$this->addTitlePercentage($p, $percent);
   
 
  }
@@ -316,25 +316,25 @@ $this->addTitlePercentage($player, $percent);
     if($percent == 25){
 
       
-       $this->addTitlePercentage($player, $percent);
+       $this->addTitlePercentage($p, $percent);
     }
 
     if($percent == 50){
 
     
-    $this->addTitlePercentage($player, $percent);
+    $this->addTitlePercentage($p, $percent);
     }
 
     if($percent == 75){
 
       
-      $this->addTitlePercentage($player, $percent);
+      $this->addTitlePercentage($p, $percent);
     }
 
     if($percent > 94){
 
      
-      $this->addTitlePercentage($player, $percent);
+      $this->addTitlePercentage($p, $percent);
       
     }
     }
