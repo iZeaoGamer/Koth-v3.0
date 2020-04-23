@@ -339,7 +339,7 @@ $this->addTitlePercentage($p, $percent);
     }
     }
 
-    public function addTitlePercentage(Player $player, int $percent){
+    public function addTitlePercentage(Player $player, $percent){
         Server::getInstance()->broadcastMessage(KothLanguage::getMessage("CAPTURING_POINT_MESSAGE", [
             "{percent}" => $percent,
             "{player}" => $player->getName()
