@@ -52,7 +52,7 @@ bot-displayname: Koth Event
 event_time: 1000000
 
 # Teleporting type on certain events, such as: Game won, and when the game resets.
-# Default: Teleports you to the default level spawnpoint.
+# default: Teleports you to the default level spawnpoint.
 # world-spawn: Teleports you to the current level's spawnpoint.
 # cords: Teleports you to the specific cordinates, as seen below.
 teleport-type: default
