@@ -69,7 +69,11 @@ class KothListener implements Listener
 
 		  $old = $this->arena->spawns[array_rand($this->arena->spawns)];
 		$p->teleport($old);
+	  }else{
+$this->arena->teleportFinish($p); //a hack to prevent respawn position from spawning them in the koth arena.
+		  //todo implement ClosureTask just in case if this issue still reoccurred for current owners, and to implement this function after setRespawnPosition() took place.
 		}
+	  
 
     }
 
