@@ -202,7 +202,7 @@ $this->getLogger()->critical("FactionsPro Plugin not found... Disabled {faction}
 
     }
 
-     public function sentToKoth(KothPlayer $player, bool $leave = false){
+     public function sentToKoth(Player $player, bool $leave = false){
 
         $arena = $this->arena;
 
