@@ -39,7 +39,7 @@ player-creation: true
 discord-support: true
 # This is the URL of the discord webhook you'd like to use. Please seek advice for discord webhooks if you need any help.
 
-webhook-url: ”https://discordapp.com/api/webhooks/624242971944026124/RUt3NvnHIzF-LEjgATkL_KKCycvHdrSfA8unCAJzWe6atEg4b84zOfBAIk-3vj8ihQAS”
+webhook-url: "https://discordapp.com/api/webhooks/624242971944026124/RUt3NvnHIzF-LEjgATkL_KKCycvHdrSfA8unCAJzWe6atEg4b84zOfBAIk-3vj8ihQAS"
 
 # Discord webhook displayname - The name that shows as a user on discord.
 bot-displayname: Koth Event
