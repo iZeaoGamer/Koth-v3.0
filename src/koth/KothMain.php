@@ -75,6 +75,7 @@ class KothMain extends PluginBase
         $this->saveDefaultConfig();
         $this->msg = $this->getConfig();
         $this->lang = new KothLanguage($this);
+        $this->kothplayer = new KothPlayer();
 
       
 

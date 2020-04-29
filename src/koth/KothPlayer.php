@@ -1,16 +1,15 @@
 <?php 
 namespace koth;
-
 use pocketmine\Player;
 
-class KothPlayer extends Player{
+class KothPlayer{
 	
-public $kothingame = false;
-	
-    public function isInGame(): bool{
-	    return $this->kothingame;
+public $kothingame = [];
+
+    public function isInGame(Player $player): bool{
+	    return $this->kothingame[strtolower($player->getName())];
     }
-    public function setInGame(bool $kothingame){
-        $this->kothingame = $kothingame;
+    public function setInGame(Player $player, bool $kothingame){
+        $this->kothingame[strtolower($player->getName())] = $kothingame;
     }
 }

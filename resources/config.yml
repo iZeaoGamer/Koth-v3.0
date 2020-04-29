@@ -26,11 +26,6 @@ rewards:
 - givemoney {player} 1000
 - give {player} diamond 2
 
-# Enable this to allow built-in KothPlayer support. If this option is set to false, then you're allowing other plugins to generate KothPlayer. This does depend on what plugins you're using to generate player data.
-# Note that other plugins will need to extend the class KothPlayer from their original Player::class in the plugin.
-# For more information on how to use this option, please check out this documentation: https://github.com/iZeaoGamer/Koth-v3.0/wiki/KothPlayer-documentation
-player-creation: true
-
 ## Discord settings
 
 # If enabled, you're willing to allow automatic support with any discord API Web-hooks virions.

@@ -14,7 +14,6 @@ use pocketmine\level\Position;
 use pocketmine\event\player\PlayerMoveEvent;
 
 use pocketmine\event\player\PlayerRespawnEvent;
-use pocketmine\event\player\PlayerCreationEvent;
 
 use pocketmine\Server;
 
@@ -24,7 +23,6 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\Player;
 
 use koth\KothMain;
-use koth\KothPlayer;
 use koth\lang\KothLanguage;
 
 use pocketmine\scheduler\ClosureTask;
@@ -62,9 +60,7 @@ class KothListener implements Listener
 
             $p = $ev->getPlayer();
 
-             if($p instanceof KothPlayer){
-
-          if($p->isInGame()){
+          if($this->plugin->kothplayer->isInGame($p)){
 
          
             $p->addTitle($this->plugin->getData("still_running_title"),$this->plugin->getData("still_running_sub"));
@@ -89,26 +85,16 @@ $this->arena->teleportFinish($p);
 
     }
 
-    }
-	public function onCreation(PlayerCreationEvent $event){
-		if($this->plugin->getConfig()->get("player-creation")){
-$event->setPlayerClass(KothPlayer::class);
-}
-	}
-
     public function onLeave(PlayerQuitEvent $ev){
         $player = $ev->getPlayer();
-        if($player instanceof KothPlayer){
-        if($player->isInGame()){
+        if($this->plugin->kothplayer->isInGame($player)){
         $this->arena->removePlayer($ev->getPlayer());
     }
         }
-    }
 
     public function onCommand(PlayerCommandPreprocessEvent $ev){
       $player = $ev->getPlayer();
-      if($player instanceof KothPlayer){
-          if($player->isInGame()){
+          if($this->plugin->kothplayer->isInGame($player)){
        if(substr($ev->getMessage(), 0, 6) === $this->plugin->getConfig()->get("spawn-command")){
             $this->arena->removePlayer($ev->getPlayer());
         }
@@ -128,15 +114,11 @@ $event->setPlayerClass(KothPlayer::class);
 
       }
 
-    }
-
     public function GamemodeChange(PlayerMoveEvent $event){
 
         $player = $event->getPlayer();
 
-        if($player instanceof KothPlayer){
-
-            if($player->isInGame()){
+            if($this->plugin->kothplayer->isInGame($player)){
 
                 if($player->getGamemode() > 0){
 
@@ -151,5 +133,3 @@ $event->setPlayerClass(KothPlayer::class);
         }
 
     }
-
-}
