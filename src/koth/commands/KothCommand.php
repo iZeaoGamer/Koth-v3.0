@@ -24,6 +24,11 @@ class KothCommand extends Command{
 				if(strtolower($args[0]) === "help"){
 					$this->sendPlayerHelp($sender);
 					return true;
+				}elseif(strtolower($args[0]) === "reload"){
+					$this->plugin->msg->reload();
+					$sender->sendMessage(KothLanguage::getMessage("KOTH_RELOAD_MESSAGE"));
+					
+				
                 }elseif (strtolower($args[0]) === "leave"){
                     if($this->plugin->isRunning()){
                         if($sender instanceof KothPlayer){
