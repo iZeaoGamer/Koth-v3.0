@@ -27,6 +27,8 @@ use koth\KothMain;
 use koth\KothPlayer;
 use koth\lang\KothLanguage;
 
+use pocketmine\scheduler\ClosureTask;
+
 
 
 
@@ -35,7 +37,7 @@ class KothListener implements Listener
 {
 
     private $plugin;
-
+	public static $kothtask;
     public function __construct(KothMain $main)
 
     {
@@ -70,9 +72,19 @@ class KothListener implements Listener
 		  $old = $this->arena->spawns[array_rand($this->arena->spawns)];
 		$p->teleport($old);
 	  }else{
-$this->arena->teleportFinish($p); //a hack to prevent respawn position from spawning them in the koth arena.
-		  //todo implement ClosureTask just in case if this issue still reoccurred for current owners, and to implement this function after setRespawnPosition() took place.
-		}
+		  //a hack to prevent messy respawn position for current owners.
+		   self::$kothtask[$p->getId()] = new ClosureTask(function () use ($p, $ev): void {
+			   if($p->isOnline()){
+		     
+$this->arena->teleportFinish($p); 
+			    self::$kothtask[$p->getId()]->getHandler()->cancel();
+                        unset(self::$kothtask[$p->getId()]);
+				 $ev->setRespawnPosition($p);  //sets respawn position after teleportation has been successful.
+                        return;
+                    }
+		    });
+                $this->plugin->getScheduler()->scheduleRepeatingTask(self::$kothtask[$p->getId()], 20 * 1);
+	}
 	  
 
     }
