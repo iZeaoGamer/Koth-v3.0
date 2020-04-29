@@ -5,7 +5,6 @@ use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use pocketmine\level\Position;
 use pocketmine\Server;
-
 use koth\KothMain;
 use koth\lang\KothLanguage;
 
@@ -19,6 +18,7 @@ class KothCommand extends Command{
         $this->player = $main->kothplayer;
     }
     public function execute(CommandSender $sender, $commandLabel, array $args){
+        if ($sender instanceof Player){
 		if(isset($args[0])){
 				if(strtolower($args[0]) === "help"){
 					$this->sendPlayerHelp($sender);
@@ -29,9 +29,9 @@ class KothCommand extends Command{
 					
 				
                 }elseif (strtolower($args[0]) === "leave"){
-                    if($sender instanceof Player){
                     if($this->plugin->isRunning()){
-                           if(!$this->player->isInGame($sender)){
+                        if($sender instanceof Player){
+                            if(!$this->player->isInGame($sender)){
                         
                         $sender->sendMessage(KothLanguage::getMessage("KOTH_NOT_INGAME"));   
                         }else{
@@ -50,16 +50,16 @@ class KothCommand extends Command{
                    return true;
 }
  }elseif (strtolower($args[0]) === "join"){
-    if($sender instanceof Player){
                     if($this->plugin->isRunning()){
-                           if($this->player->isInGame($sender)){
+                        if($sender instanceof Player){
+                            if($this->player->isInGame($sender)){
                      
                                 $sender->sendMessage(KothLanguage::getMessage("KOTH_ALREADY_INGAME"));
                     }else{
                          $this->plugin->sentToKoth($sender);
                     
                      $sender->sendMessage(KothLanguage::getMessage("KOTH_JOINED_SUCCESS"));  
-                     $sender->setInGame(true);
+                     $this->player->setInGame($sender, true);
                             }
                         }
                         }else{
@@ -70,7 +70,6 @@ class KothCommand extends Command{
                     return true;
                         }
 				}else if(strtolower($args[0]) === "seteventtime"){
-                    if($sender instanceof Player){
 					if(!isset($args[1])){
 					
                     $sender->sendMessage(KothLanguage::getMessage("EVENTTIME_COMMAND_USAGE"));
