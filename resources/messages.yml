@@ -115,5 +115,8 @@
 
   # {time} - Replaces with the starting timer.
   KOTH_STARTING_POPUP: "&5Game starting in &6{time}"
+  
+
+  KOTH_RELOAD_MESSAGE: "&6Koth config.yml has been reloaded successfully."
 
   # End of line. No seriously, you're done!
