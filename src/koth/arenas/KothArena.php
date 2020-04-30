@@ -261,7 +261,7 @@ if($this->plugin->msg->get("discord-support")){
         "{faction}" => $this->plugin->getFaction($player),
         "{player}" => $player->getName()]) : "");
         $this->plugin->getServer()->broadcastMessage(KothLanguage::getMessage("KOTH_WIN_MESSAGE", [
-            "{factionMode}" => $factionMode
+            "{factionmode}" => $factionMode
         ]));
            
         $this->giveRewards($player);
