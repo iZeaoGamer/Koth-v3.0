@@ -66,7 +66,7 @@ class KothListener implements Listener
             $p->addTitle($this->plugin->getData("still_running_title"),$this->plugin->getData("still_running_sub"));
 
 		  $old = $this->arena->spawns[array_rand($this->arena->spawns)];
-		$p->teleport($old); //todo add ClosureTask too just in case.
+		$p->teleport($old); //todo add ClosureTask just in case.
 	  }else{
 		  //a hack to prevent messy respawn position for current owners.
 		   self::$kothtask[$p->getId()] = new ClosureTask(function () use ($p, $ev): void {
