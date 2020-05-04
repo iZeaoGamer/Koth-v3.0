@@ -100,7 +100,7 @@ $this->arena->teleportFinish($p);
 	       return;
        }
 	       $command = substr(explode(" ", $message)[0], 1);
-       if(in_array(strtolower($command), $this->plugin->getConfig()->get("spawn-command")){
+       if(in_array(strtolower($command), $this->plugin->getConfig()->get("spawn-command"))){
             $this->arena->removePlayer($ev->getPlayer());
         }
 	
