@@ -66,7 +66,8 @@ world: world
 # Command to execute if you want to leave a koth game.
 # This option could be an alternative to /koth leave if people want to use this command.
 
-spawn-command: "/spawn"
+spawn-command:
+- spawn
 
 # Commands to block whilst in a koth game.
 BlockedCommands:
