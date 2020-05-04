@@ -96,7 +96,9 @@ $this->arena->teleportFinish($p);
       $player = $ev->getPlayer();
           if($this->plugin->kothplayer->isInGame($player)){
 		  $message = $ev->getMessage();
-       if(substr($message, 0, 1) === "/") {
+       if(substr($message, 0, 1) != "/") {
+	       return;
+       }
 	       $command = substr(explode(" ", $message)[0], 1);
        if(in_array(strtolower($command), $this->plugin->getConfig()->get("spawn-command")){
             $this->arena->removePlayer($ev->getPlayer());
