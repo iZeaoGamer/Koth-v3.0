@@ -59,22 +59,22 @@ class KothListener implements Listener
     public function onRespawn(PlayerRespawnEvent $ev){
 
             $p = $ev->getPlayer();
-
+ self::$kothtask[$p->getId()] = new ClosureTask(function () use ($p, $ev): void {
           if($this->plugin->kothplayer->isInGame($p)){
-
+if($p->isOnline()){
          
             $p->addTitle($this->plugin->getData("still_running_title"),$this->plugin->getData("still_running_sub"));
 
 		  $old = $this->arena->spawns[array_rand($this->arena->spawns)];
-		$p->teleport($old); //todo add ClosureTask just in case.
+		$p->teleport($old);
 	  }else{
 		  //a hack to prevent messy respawn position for current owners.
-		   self::$kothtask[$p->getId()] = new ClosureTask(function () use ($p, $ev): void {
-			   if($p->isOnline()){
+		  
+			   
 		     
 $this->arena->teleportFinish($p); 
 				   $ev->setRespawnPosition($p);  //sets respawn position after teleportation has been successful
-			    
+			    self::$kothtask[$p->getId()]->getHandler()->cancel();
                         unset(self::$kothtask[$p->getId()]);
                         return;
                     }
