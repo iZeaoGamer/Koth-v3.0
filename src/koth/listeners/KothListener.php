@@ -60,8 +60,9 @@ class KothListener implements Listener
 
             $p = $ev->getPlayer();
  self::$kothtask[$p->getId()] = new ClosureTask(function () use ($p, $ev): void {
-          if($this->plugin->kothplayer->isInGame($p)){
 if($p->isOnline()){
+	 if($this->plugin->kothplayer->isInGame($p)){
+
          
             $p->addTitle($this->plugin->getData("still_running_title"),$this->plugin->getData("still_running_sub"));
 
@@ -76,14 +77,16 @@ $this->arena->teleportFinish($p);
 				   $ev->setRespawnPosition($p);  //sets respawn position after teleportation has been successful
 			    self::$kothtask[$p->getId()]->getHandler()->cancel();
                         unset(self::$kothtask[$p->getId()]);
-                        return;
+        		return;                
                     }
+	
+}
 		    });
                 $this->plugin->getScheduler()->scheduleDelayedTask(self::$kothtask[$p->getId()], 20 * 1);
 	}
 	  
 
-    }
+    
 
     public function onLeave(PlayerQuitEvent $ev){
         $player = $ev->getPlayer();
