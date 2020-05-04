@@ -74,12 +74,12 @@ class KothListener implements Listener
 		     
 $this->arena->teleportFinish($p); 
 				   $ev->setRespawnPosition($p);  //sets respawn position after teleportation has been successful
-			    self::$kothtask[$p->getId()]->getHandler()->cancel();
+			    
                         unset(self::$kothtask[$p->getId()]);
                         return;
                     }
 		    });
-                $this->plugin->getScheduler()->scheduleRepeatingTask(self::$kothtask[$p->getId()], 20 * 1);
+                $this->plugin->getScheduler()->scheduleDelayedTask(self::$kothtask[$p->getId()], 20 * 1);
 	}
 	  
 
