@@ -95,15 +95,16 @@ $this->arena->teleportFinish($p);
     public function onCommand(PlayerCommandPreprocessEvent $ev){
       $player = $ev->getPlayer();
           if($this->plugin->kothplayer->isInGame($player)){
-       if(substr($ev->getMessage(), 0, 6) === $this->plugin->getConfig()->get("spawn-command")){
+		  $message = $ev->getMessage();
+       if(substr($message, 0, 1) === "/") {
+	       $command = substr(explode(" ", $message)[0], 1);
+       if(in_array(strtolower($command), $this->plugin->getConfig()->get("spawn-command")){
             $this->arena->removePlayer($ev->getPlayer());
         }
-        $message = $ev->getMessage();
-        if($message[0] != "/") {
-            return;
-        }
-    $command = strtolower(substr($message, 1));
-        if(in_array($command, (array)$this->plugin->getConfig()->get("BlockedCommands"))) {
+	
+				
+				if(in_array(strtolower($command), $this->plugin->getConfig()->get("BlockedCommands"))) {
+					$ev->setCancelled();
     $ev->setCancelled();
 
             $ev->getPlayer()->sendMessage(KothLanguage::getMessage("KOTH_BLOCKED_COMMAND_MESSAGE"));
