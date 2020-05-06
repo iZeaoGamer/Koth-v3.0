@@ -38,6 +38,8 @@ class KothMain extends PluginBase
        public $stopped = true;
 
     public $started = false;
+	public $kothplayer;
+	
 
     
 
@@ -140,6 +142,9 @@ $this->getLogger()->critical("FactionsPro Plugin not found... Disabled {faction}
 
         }
     }
+	public function getKothPlayer(): KothPlayer{
+		return $this->kothplayer;
+	}
     public function getLang(): KothLanguage{
         return $this->lang;
     }
