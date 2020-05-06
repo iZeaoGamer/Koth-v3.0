@@ -149,7 +149,7 @@ class KothArena
                         $x = $cords[0];
                         $y = $cords[1];
                         $z = $cords[2];
-            $spawn = new Position($x, $y, $z, $this->plugin->getConfig()->get("world"));
+            $spawn = new Position($x, $y, $z, $this->plugin->getServer()->getLevelByName($this->plugin->getConfig()->get("world")));
 	}
         $player->teleport($spawn);
 	  //todo add error messages.
