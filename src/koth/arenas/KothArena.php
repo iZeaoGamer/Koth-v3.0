@@ -126,9 +126,9 @@ class KothArena
 
             
 
-            if ($p instanceof KothPlayer){
+           if($this->plugin->kothplayer->isInGame($p)){
 
-                $p->setInGame(false);
+                $this->plugin->kothplayer->setInGame($p, false);
                 $this->teleportFinish($p);
 
             
@@ -275,10 +275,10 @@ if($this->plugin->msg->get("discord-support")){
      
       
 
-         if($player instanceof KothPlayer){
+        if($this->plugin->kothplayer->isInGame($player)){
 		 $this->teleportFinish($player);
 
-            $player->setInGame(false);
+            $this->plugin->kothplayer->setInGame($player, false);
          }
 			if($this->plugin->msg->get("discord-support")){
 
@@ -351,8 +351,8 @@ $this->addTitlePercentage($p, $percent);
 
             $p = $this->plugin->getServer()->getPlayer($player);
 
-            if ($p instanceof KothPlayer){
-            $p->setInGame(false);
+           if($this->plugin->kothplayer->isInGame($p)){
+            $this->plugin->kothplayer->setInGame($p, false);
             }
 
             
@@ -419,10 +419,8 @@ $p->sendMessage(KothLanguage::getMessage("KOTH_ENDED_BROADCASTED"));
         $this->players[$player->getName()] = $this->plugin->getData("capture_time");
 
         $this->sendRandomSpot($player);
-
-        if($player instanceof KothPlayer){
-
-            $player->setInGame(true);
+if(!$this->plugin->kothplayer->isInGame($player)){
+            $this->plugin->kothplayer->setInGame($player, true);
         }
 if($this->plugin->msg->get("discord-support")){
             $this->plugin->discord->sendToDiscord(KothLanguage::getMessage("KOTH_JOIN", [
