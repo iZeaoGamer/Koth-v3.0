@@ -1,3 +1,7 @@
+
+## INACTIVE NOTICE
+I currently don't maintain this plugin anymore. I may start it back up in the near future with a shit ton of bug fixes, but for now, I'll be keeping quiet. The reason is because I've been very busy, and have little to no time to make this plugin.
+
 ## Koth 3.0.0-ALPHA
 
 A customizable plugin + Mini-Game, made for Faction servers, which offers: Many configurable options, and some that have never been seen before.
